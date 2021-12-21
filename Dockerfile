@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM rocm/dev-ubuntu-20.04
 
 MAINTAINER 2d65
 
