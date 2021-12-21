@@ -1,10 +1,10 @@
-FROM rocm/dev-ubuntu-20.04
+FROM ubuntu:20.04
 
 MAINTAINER 2d65
 
 WORKDIR /
 # Package and dependency setup
-RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -y pciutils ca-certificates wget && rm -rf /var/lib/apt/lists/*
+RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -y opencl-*amdgpu* pciutils ca-certificates wget && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/NebuTech/NBMiner/releases/download/v40.1/NBMiner_40.1_Linux.tgz; \
     tar zxvf NBMiner_40.1_Linux.tgz; \
