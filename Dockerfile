@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.1.1-runtime-ubuntu20.04
+FROM ubuntu
 
 MAINTAINER 2d65
 
