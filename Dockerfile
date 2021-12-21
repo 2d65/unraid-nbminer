@@ -4,10 +4,10 @@ MAINTAINER 2d65
 
 WORKDIR /
 # Package and dependency setup
-RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -y wget && rm -rf /var/lib/apt/lists/*
+RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -y ca-certificates wget && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://dl.nbminer.com/NBMiner_40.1_Linux.tgz; \
-    tar zxvf https://dl.nbminer.com/NBMiner_40.1_Linux.tgz; \
+RUN wget https://github.com/NebuTech/NBMiner/releases/download/v40.1/NBMiner_40.1_Linux.tgz; \
+    tar zxvf NBMiner_40.1_Linux.tgz; \
     cd NBMiner_Linux; \
     chmod +x ./nbminer; \
     cp ./nbminer /usr/local/bin/nbminer
